@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  development_db:
+    image: postgres
+    container_name: rh-development-postgres
+    environment:
+      POSTGRES_USER: hubroot
+      POSTGRES_PASSWORD: nobsrecipes
+      POSTGRES_DB: development
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - development_db
+
+volumes:
+  postgres_data:
