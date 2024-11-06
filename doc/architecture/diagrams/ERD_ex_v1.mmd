@@ -1,0 +1,29 @@
+---
+title: RH Diagrams
+---
+erDiagram
+  USER ||--|{ RECIPE : makes
+  USER ||--|{ FAVORITE : has-many
+  RECIPE ||--|{ INGREDIENT : has-many
+  RECIPE ||--|{ INSTRUCTION : has-many
+  RECIPE ||--|{ EQUIPMENT: has-many
+  RECIPE ||--|{ MEDIA : optionally-includes
+
+  USER {
+    int id
+    string username
+    string email
+    string first_name
+    string last_name
+  }
+
+  FAVORITE {
+    int id
+    int user_id
+    int recipe_id
+  }
+
+  RECIPE {
+    int id
+
+  }

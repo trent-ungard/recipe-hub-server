@@ -1,0 +1,5 @@
+[user]
+  email = trentungard@gmail.com
+    
+[url "git@github.com-trentungard"]
+  insteadOf = git@bitbucket.org

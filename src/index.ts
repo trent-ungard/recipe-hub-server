@@ -1,3 +1,3 @@
-import createApp from './app.ts';
-
+import createApp from './app.js';
+// import "dotenv/config";
 createApp();

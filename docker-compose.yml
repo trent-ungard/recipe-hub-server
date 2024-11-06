@@ -1,16 +1,33 @@
 version: '3.8'
 services:
   development_db:
-    image: postgres
+    image: postgres:latest
+    restart: always
     container_name: rh-development-postgres
     environment:
       POSTGRES_USER: hubroot
       POSTGRES_PASSWORD: nobsrecipes
-      POSTGRES_DB: development
+      POSTGRES_DB: hubdb
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  flyway:
+    image: flyway/flyway
+    command: >
+      -url=jdbc:postgresql://development_db:5432/hubdb
+      -schemas=public
+      -user=hubroot
+      -password=nobsrecipes
+      -connectRetries=5
+      migrate
+      -validateMigrationNaming=true
+      -X
+    volumes:
+      - ./database:/flyway/sql
+    depends_on:
+      - development_db
   
   adminer:
     image: adminer

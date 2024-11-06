@@ -1,0 +1,11 @@
+---
+title: RH Diagrams
+---
+erDiagram
+    USER ||--|{ RECIPE : has-many
+    USER }|--|| FAVORITE : has-many
+    FAVORITE }|--|| RECIPE : has-many
+    RECIPE ||--|{ INGREDIENT : has-many
+    RECIPE ||--|{ INSTRUCTION : has-many
+    RECIPE ||--|{ EQUIPMENT: has-many
+    RECIPE ||--|{ MEDIA : optionally-includes

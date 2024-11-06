@@ -1,0 +1,4 @@
+- Create function to fetch external mealdb recipes by ingedient
+- Create util to format results
+- Create locally executable script that calls function, formats, and then writes to database
+- Restrucure project so server and database and documentation are all separate
