@@ -1,8 +1,8 @@
-import { Express } from "express";
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 //import all routers here
 import { usersRouter } from '../routers/index';
+import { app } from "../app";
 
 const options = {
   definition: {
@@ -20,7 +20,7 @@ const options = {
 const swaggerSpec = swaggerJsDoc(options);
 console.log('swagger spec', swaggerSpec);
 
-export const mountSwaggerMiddleware = (app: Express) => {
+export const mountSwaggerMiddleware = () => {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   // attach all routers here
   app.use('/users', usersRouter);

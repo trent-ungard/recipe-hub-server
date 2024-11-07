@@ -5,7 +5,7 @@ import { PORT } from './config/env';
 const app: Express = express();
 
 const createApp = () => {
-  mountMiddleware(app);
+  mountMiddleware();
   app.listen(PORT, () => {
     console.log('server listening on port ' + PORT)
   });
