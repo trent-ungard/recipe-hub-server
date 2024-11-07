@@ -7,7 +7,7 @@
     "skipLibCheck": true,                        // Skip type checking of declaration files
     "forceConsistentCasingInFileNames": true,    // Disallow inconsistently-cased references to the same file
     "outDir": "./dist",                          // Redirect output structure to the `dist` folder
-    "rootDir": "./src",                          // Specify the root directory of input files
+    "rootDir": "./",                             // Specify the root directory of input files
     "resolveJsonModule": true,                   // Enable importing .json files
     "moduleResolution": "node",                  // Specify module resolution strategy: 'node' for Node.js
     "allowJs": true,                             // Allow JavaScript files to be compiled
@@ -16,6 +16,6 @@
     "declaration": true,                         // Generate corresponding '.d.ts' files
     "noImplicitAny": true                        // Raise error on expressions and declarations with an implied `any` type
   },
-  "include": ["src/**/*.ts"],                    // Include all .ts files in the 'src' folder
+  "include": ["src/**/*.ts", "../index.ts", "app.ts"],                    // Include all .ts files in the 'src' folder
   "exclude": ["node_modules", "dist"]            // Exclude the 'node_modules' and 'dist' folders
 }

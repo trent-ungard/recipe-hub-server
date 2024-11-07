@@ -4,21 +4,21 @@ import { getUsers } from '../controllers/users';
 /**
  * @swagger
  * tags:
- *   name: Comic Books
- *   description: Comic book routes
+ *   name: Users
+ *   description: Users routes
  */
 const router: Router = Router();
 
-// GET all comic books
+// GET all users
 /**
  * @openapi
- * /comic_books:
+ * /Users:
  *   get:
  *     description: Get a list of all the comic books.
- *     tags: [Comic Books]
+ *     tags: [Users]
  *     responses:
  *       200:
- *         description: Returns a JSON list of all the comic books.
+ *         description: Returns a JSON list of all Users.
  */
 router.route("/:id").get((_: any, res: any) => {
   res.send("Get a user");
